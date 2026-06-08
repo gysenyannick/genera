@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>X-GROUP | One Partner. Every Property.</title>
-  <meta name="description" content="X-GROUP is Belgium's professional property care partner — cleaning, maintenance, protection and improvement for residential, commercial, industrial and property management clients." />
+  <meta name="description" content="X-GROUP is uw professionele partner voor property care in België — reiniging, onderhoud, bescherming en verbetering voor residentieel, commercieel en industrieel vastgoed." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <div class="container announce-bar__inner">
+      <span class="announce-bar__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </span>
+      <span>Introductie: Jaarlijkse onderhoudspakketten voor residentieel, commercieel &amp; industrieel vastgoed.</span>
+      <a href="#contact" class="announce-bar__link">Meer info &rarr;</a>
+    </div>
+  </div>
 
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="nav__logo">
-        <span class="logo-x">X</span><span class="logo-group">-GROUP</span>
+        <span class="logo-x">X</span><span class="logo-dash">-</span><span class="logo-group">GROUP</span>
       </a>
       <nav class="nav__links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#markets">Markets</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact" class="nav__cta">Get a Quote</a>
+        <a href="#residential">Residentieel</a>
+        <a href="#commercial">Commercieel</a>
+        <a href="#industrial">Industrieel</a>
+        <a href="#maintenance">Vastgoedbeheer</a>
+        <a href="#contact" class="nav__cta-link">
+          Offerte Aanvragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </nav>
-      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+      <button class="nav__burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -33,646 +48,508 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80" alt="Property cleaning" class="hero__img" />
       <div class="hero__overlay"></div>
     </div>
     <div class="container hero__content">
-      <div class="hero__eyebrow">Belgium's Professional Property Care Partner</div>
-      <h1 class="hero__title">One partner.<br /><span class="accent">Every property.</span></h1>
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        Beschikbaar in heel België
+      </div>
+      <h1 class="hero__title">
+        The Property Care<br />Solution.
+      </h1>
       <p class="hero__sub">
-        Cleaning, maintenance, protection and improvement — for residential, commercial, industrial and property management clients across Belgium.
+        Professionele reiniging, onderhoud, bescherming en verbetering voor residentieel, commercieel en industrieel vastgoed in België.
       </p>
       <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary">Request a Quote</a>
-        <a href="#services" class="btn btn--ghost">Explore Services</a>
-      </div>
-      <div class="hero__stats">
-        <div class="stat">
-          <span class="stat__number">4</span>
-          <span class="stat__label">Markets Served</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number">20+</span>
-          <span class="stat__label">Services Offered</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number">1</span>
-          <span class="stat__label">Point of Contact</span>
-        </div>
+        <a href="tel:+32" class="btn btn--outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1.27h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.7a16 16 0 006.29 6.29l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+          Bel ons
+        </a>
+        <a href="#contact" class="btn btn--primary">
+          Offerte Aanvragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
-    <div class="hero__scroll">
-      <span>Scroll to explore</span>
-      <div class="scroll-line"></div>
+    <div class="hero__visual">
+      <div class="container">
+        <div class="hero__image-wrap">
+          <img src="https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&w=1200&q=85" alt="Professional property care" class="hero__feature-img" />
+          <div class="hero__image-badge">
+            <div class="hib-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <strong>Gecertificeerd &amp; Verzekerd</strong>
+              <span>Professioneel team</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- INTRO STRIP -->
-  <section class="intro-strip">
-    <div class="container intro-strip__inner">
-      <p class="intro-strip__text">
-        X-GROUP is built to grow with you — from a single property cleaning to a full-scope maintenance contract for your entire portfolio.
-      </p>
+  <!-- ANNOUNCEMENT STRIP -->
+  <section class="info-strip">
+    <div class="container info-strip__inner">
+      <div class="info-strip__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span><strong>Nieuwe onderhoudspakketten</strong> — Seizoensgebonden service, prioriteitstoegang en premium vastgoedzorg.</span>
+        <a href="#contact">Meer info &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <!-- MARKETS -->
-  <section class="markets section" id="markets">
+  <!-- VIDEO / SERVICE PREVIEWS -->
+  <section class="previews">
+    <div class="container">
+      <div class="previews__grid">
+        <div class="preview-card">
+          <div class="preview-card__img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Residentieel" />
+            <div class="preview-card__overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card__img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Commercieel" />
+            <div class="preview-card__overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card__img">
+            <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=600&q=80" alt="Industrieel" />
+            <div class="preview-card__overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="services-overview">
+    <div class="container">
+      <div class="services-overview__grid">
+
+        <div class="sov-card" id="residential">
+          <div class="sov-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Residentiële Diensten</h3>
+          <p>Voor klanten die hun woning, oprit, terras, dak, gevel of tuin professioneel willen laten reinigen en onderhouden.</p>
+          <ul>
+            <li>Dakreiniging &amp; mosverwijdering</li>
+            <li>Gevelreiniging</li>
+            <li>Oprit- &amp; terrasbehaling</li>
+            <li>Dakgootreiniging</li>
+            <li>Zonnepanelreiniging</li>
+          </ul>
+          <a href="#contact" class="sov-link">Residentieel bekijken &rarr;</a>
+        </div>
+
+        <div class="sov-card" id="commercial">
+          <div class="sov-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Commerciële Diensten</h3>
+          <p>Voor bedrijven, kantoren, winkels, horeca en parkings die een verzorgde, professionele uitstraling willen behouden.</p>
+          <ul>
+            <li>Gebouwreiniging &amp; gevels</li>
+            <li>Etalage- &amp; raamreiniging</li>
+            <li>Parkingbehaling</li>
+            <li>Graffitiverwijdering</li>
+            <li>Onderhoudcontracten</li>
+          </ul>
+          <a href="#contact" class="sov-link">Commercieel bekijken &rarr;</a>
+        </div>
+
+        <div class="sov-card" id="industrial">
+          <div class="sov-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l8-8 8 8v10"/><rect x="9" y="14" width="6" height="6"/></svg>
+          </div>
+          <h3>Industriële Diensten</h3>
+          <p>Voor magazijnen, fabrieken en logistieke sites die zwaar industrieel reinigingswerk vereisen op grote schaal.</p>
+          <ul>
+            <li>Industrieel hogedrukreiniging</li>
+            <li>Magazijn- &amp; hallreiniging</li>
+            <li>Laadkadeireiniging</li>
+            <li>Ontvetting &amp; sanering</li>
+            <li>Grote oppervlaktereiniging</li>
+          </ul>
+          <a href="#contact" class="sov-link">Industrieel bekijken &rarr;</a>
+        </div>
+
+        <div class="sov-card" id="maintenance">
+          <div class="sov-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          </div>
+          <h3>Vastgoedbeheer</h3>
+          <p>Voor syndici, vastgoedbeheerders en investeerders die hun portfolio onder één contract willen laten onderhouden.</p>
+          <ul>
+            <li>Onderhoudspakketten op maat</li>
+            <li>Schilderwerk &amp; kleine herstellingen</li>
+            <li>Coatings &amp; gevelprotectie</li>
+            <li>Preventief onderhoud</li>
+            <li>Renovatiecoördinatie</li>
+          </ul>
+          <a href="#contact" class="sov-link">Vastgoedbeheer bekijken &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container stats-bar__inner">
+      <div class="stat-item">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-label">Marktsegmenten</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="20">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Diensten</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1">0</span>
+        <span class="stat-label">Aanspreekpunt</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="24">0</span><span class="stat-plus">u</span>
+        <span class="stat-label">Reactietijd</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="container mission__inner">
+      <div class="mission__left">
+        <div class="section-tag">Onze Missie &amp; Waarden</div>
+        <h2>Eén partner.<br />Elk vastgoed.</h2>
+        <p>
+          X-GROUP heeft een professioneel, volledig uitgerust team opgebouwd dat elke reinigings- en onderhoudsvraag voor residentieel, commercieel en industrieel vastgoed aankan. Met vaste processen, transparante prijzen en een dedicated aanspreekpunt leveren we kwaliteit die u kunt plannen.
+        </p>
+        <p>
+          Gefocust op betrouwbaarheid, vakmanschap en klanttevredenheid biedt X-GROUP zowel eenmalige projecten als langetermijn onderhoudsprogramma's voor particulieren, bedrijven, syndici en investeerders.
+        </p>
+        <div class="mission__signature">
+          <strong>X-GROUP Belgium</strong>
+          <span>Professionele Property Care Partner</span>
+        </div>
+        <a href="#contact" class="btn btn--primary">Gratis Offerte Aanvragen &rarr;</a>
+      </div>
+      <div class="mission__right">
+        <div class="mission__img-wrap">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=85" alt="Professional team" />
+          <div class="mission__img-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div>
+              <strong>100% Professioneel</strong>
+              <span>Gecertificeerd &amp; volledig verzekerd</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY X-GROUP -->
+  <section class="why">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">Who We Serve</div>
-        <h2 class="section-title">Built for every type of property</h2>
-        <p class="section-sub">Whether you own one home or manage a portfolio of commercial sites, X-GROUP delivers the same level of professionalism and care.</p>
+        <div class="section-tag">Waarom X-GROUP</div>
+        <h2>Wat ons onderscheidt</h2>
       </div>
-      <div class="markets__grid">
-        <div class="market-card market-card--residential">
-          <div class="market-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
-              <path d="M9 21V12h6v9"/>
-            </svg>
+      <div class="why__grid">
+        <div class="why-card">
+          <div class="why-card__num">01</div>
+          <div class="why-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <div class="market-card__tag">Residential</div>
-          <h3>Homes &amp; Villas</h3>
-          <p>Keep your home looking its best year-round. From roof cleaning to driveway washing, we handle the exterior so you don't have to.</p>
-          <a href="#residential" class="market-card__link">See services →</a>
+          <h4>Één aanspreekpunt</h4>
+          <p>Geen vijf verschillende aannemers meer. Wij coördineren alles — van een eenmalige reiniging tot een volledig meerjarig onderhoudsprogramma.</p>
         </div>
-        <div class="market-card market-card--commercial">
-          <div class="market-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="7" width="20" height="15" rx="1"/>
-              <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-              <line x1="12" y1="12" x2="12" y2="16"/>
-              <line x1="10" y1="14" x2="14" y2="14"/>
-            </svg>
+        <div class="why-card">
+          <div class="why-card__num">02</div>
+          <div class="why-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <div class="market-card__tag">Commercial</div>
-          <h3>Businesses &amp; Retail</h3>
-          <p>First impressions matter. We maintain the exterior of offices, shops, restaurants and retail spaces on a schedule that works for you.</p>
-          <a href="#commercial" class="market-card__link">See services →</a>
+          <h4>Gepland &amp; transparant</h4>
+          <p>Duidelijke offertes, vaste prijzen, geplande bezoeken en gedocumenteerd werk. U weet altijd wat er gedaan werd, wanneer en waarom.</p>
         </div>
-        <div class="market-card market-card--industrial">
-          <div class="market-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M2 20V10l6-6h8l6 6v10H2z"/>
-              <path d="M9 20v-6h6v6"/>
-              <path d="M2 10h20"/>
-            </svg>
+        <div class="why-card">
+          <div class="why-card__num">03</div>
+          <div class="why-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <div class="market-card__tag">Industrial</div>
-          <h3>Warehouses &amp; Factories</h3>
-          <p>Heavy-duty cleaning for industrial facilities, logistics sites and manufacturing plants. We operate at scale, safely and efficiently.</p>
-          <a href="#industrial" class="market-card__link">See services →</a>
+          <h4>Betrouwbaar &amp; op tijd</h4>
+          <p>Wij komen opdagen, voeren de opdracht uit en communiceren. Onderhoudcontracten worden vooraf ingepland zodat uw eigendom nooit verwaarloosd wordt.</p>
         </div>
-        <div class="market-card market-card--management">
-          <div class="market-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
-              <rect x="9" y="3" width="6" height="4" rx="1"/>
-              <path d="M9 12h6M9 16h4"/>
-            </svg>
+        <div class="why-card">
+          <div class="why-card__num">04</div>
+          <div class="why-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
           </div>
-          <div class="market-card__tag">Property Management</div>
-          <h3>Syndics &amp; Investors</h3>
-          <p>One reliable partner for your entire property portfolio. Maintenance packages, preventive care and full coordination — all under one contract.</p>
-          <a href="#maintenance" class="market-card__link">See services →</a>
+          <h4>Gebouwd om te groeien</h4>
+          <p>Begin met één dienst. Voeg toe naarmate uw behoeften groeien. Wij zijn gestructureerd voor zowel individuele panden als grote vastgoedportefeuilles.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services section" id="services">
+  <!-- PACKAGES -->
+  <section class="packages">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">What We Do</div>
-        <h2 class="section-title">Complete property care services</h2>
-        <p class="section-sub">From a single gutter clean to a multi-year maintenance contract, we provide every service your property needs.</p>
-      </div>
-
-      <!-- Residential -->
-      <div class="service-block" id="residential">
-        <div class="service-block__header">
-          <div class="service-block__number">01</div>
-          <div>
-            <div class="service-block__category">Residential Property Care</div>
-            <h3 class="service-block__title">For homeowners, villas &amp; residential properties</h3>
-          </div>
-        </div>
-        <div class="service-block__grid">
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="service-item__name">Roof Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12s1-2 4-2 4 2 4 2"/><path d="M9 9h.01M15 9h.01"/></svg>
-            </div>
-            <div class="service-item__name">Moss Removal</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
-            </div>
-            <div class="service-item__name">Facade Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8"/><path d="M3 21h18"/></svg>
-            </div>
-            <div class="service-item__name">Driveway Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12M12 12L5 7M12 12l7-5"/><path d="M5 7V17l7 5 7-5V7"/></svg>
-            </div>
-            <div class="service-item__name">Patio Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="service-item__name">Gutter Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            </div>
-            <div class="service-item__name">Solar Panel Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><line x1="8" y1="21" x2="8" y2="12"/><line x1="16" y1="21" x2="16" y2="12"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-            </div>
-            <div class="service-item__name">Exterior House Washing</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Commercial -->
-      <div class="service-block" id="commercial">
-        <div class="service-block__header">
-          <div class="service-block__number">02</div>
-          <div>
-            <div class="service-block__category">Commercial Property Care</div>
-            <h3 class="service-block__title">For businesses, offices, shops &amp; retail spaces</h3>
-          </div>
-        </div>
-        <div class="service-block__grid">
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-            </div>
-            <div class="service-item__name">Exterior Building Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>
-            </div>
-            <div class="service-item__name">Storefront Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 9h22"/></svg>
-            </div>
-            <div class="service-item__name">Parking Lot Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20M9 3v18"/></svg>
-            </div>
-            <div class="service-item__name">Window &amp; Glass Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            </div>
-            <div class="service-item__name">Graffiti Removal</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            </div>
-            <div class="service-item__name">Recurring Cleaning Contracts</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <div class="service-item__name">Commercial Exterior Maintenance</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Industrial -->
-      <div class="service-block" id="industrial">
-        <div class="service-block__header">
-          <div class="service-block__number">03</div>
-          <div>
-            <div class="service-block__category">Industrial Cleaning</div>
-            <h3 class="service-block__title">For warehouses, factories &amp; logistics sites</h3>
-          </div>
-        </div>
-        <div class="service-block__grid">
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l8-8 8 8v10"/><rect x="9" y="14" width="6" height="6"/></svg>
-            </div>
-            <div class="service-item__name">Industrial Pressure Washing</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-            </div>
-            <div class="service-item__name">Warehouse Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            </div>
-            <div class="service-item__name">Loading Dock Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12M12 12L5 7M12 12l7-5"/><circle cx="12" cy="5" r="3"/></svg>
-            </div>
-            <div class="service-item__name">Equipment Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-            </div>
-            <div class="service-item__name">Degreasing</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-            </div>
-            <div class="service-item__name">Large Surface Cleaning</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <div class="service-item__name">Site Sanitation</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Property Maintenance -->
-      <div class="service-block" id="maintenance">
-        <div class="service-block__header">
-          <div class="service-block__number">04</div>
-          <div>
-            <div class="service-block__category">Property Maintenance</div>
-            <h3 class="service-block__title">For syndics, property managers &amp; investors</h3>
-          </div>
-        </div>
-        <div class="service-block__grid">
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div class="service-item__name">Maintenance Packages</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l8-8 8 8v10"/><path d="M9 20v-5h6v5"/></svg>
-            </div>
-            <div class="service-item__name">Painting</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <div class="service-item__name">Small Repairs</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <div class="service-item__name">Coatings &amp; Protection</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-            </div>
-            <div class="service-item__name">Facade Protection</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="service-item__name">Roof Repair Coordination</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="service-item__name">Preventive Maintenance</div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></svg>
-            </div>
-            <div class="service-item__name">Renovation Coordination</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH / WHY X-GROUP -->
-  <section class="approach section" id="approach">
-    <div class="container">
-      <div class="approach__layout">
-        <div class="approach__left">
-          <div class="section-tag">Our Approach</div>
-          <h2 class="section-title">Why X-GROUP</h2>
-          <p class="approach__intro">
-            We are not a small cleaning company that rents a pressure washer. X-GROUP is built as a professional property services organization — structured, reliable and designed to scale.
-          </p>
-          <div class="approach__items">
-            <div class="approach__item">
-              <div class="approach__item-num">01</div>
-              <div>
-                <h4>One point of contact</h4>
-                <p>No more coordinating with five different contractors. We manage everything — from a single gutter clean to a complete multi-site maintenance program.</p>
-              </div>
-            </div>
-            <div class="approach__item">
-              <div class="approach__item-num">02</div>
-              <div>
-                <h4>Structured &amp; transparent</h4>
-                <p>Clear proposals, fixed pricing, scheduled visits and documented work. You always know what was done, when and why.</p>
-              </div>
-            </div>
-            <div class="approach__item">
-              <div class="approach__item-num">03</div>
-              <div>
-                <h4>Built to grow with you</h4>
-                <p>Start with one service. Add more as your needs grow. We're structured to handle single properties and large portfolios with the same quality.</p>
-              </div>
-            </div>
-            <div class="approach__item">
-              <div class="approach__item-num">04</div>
-              <div>
-                <h4>Reliability you can plan around</h4>
-                <p>We show up, we do the job, we communicate. Maintenance contracts are scheduled in advance so your properties are never neglected.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="approach__right">
-          <div class="approach__visual">
-            <div class="approach__card approach__card--1">
-              <div class="approach__card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div>
-                <strong>Residential</strong>
-                <span>Full exterior care</span>
-              </div>
-            </div>
-            <div class="approach__card approach__card--2">
-              <div class="approach__card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div>
-                <strong>Commercial</strong>
-                <span>Regular contracts</span>
-              </div>
-            </div>
-            <div class="approach__card approach__card--3">
-              <div class="approach__card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div>
-                <strong>Industrial</strong>
-                <span>Heavy-duty cleaning</span>
-              </div>
-            </div>
-            <div class="approach__card approach__card--4">
-              <div class="approach__card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div>
-                <strong>Property Management</strong>
-                <span>Portfolio solutions</span>
-              </div>
-            </div>
-            <div class="approach__badge">
-              <span class="approach__badge-x">X</span>
-              <span>One Partner</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS MODEL / PACKAGES -->
-  <section class="packages section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">How We Work</div>
-        <h2 class="section-title">From one-time to long-term</h2>
-        <p class="section-sub">We work with clients at every stage — from a single clean to a full annual maintenance partnership.</p>
+        <div class="section-tag">Hoe We Werken</div>
+        <h2>Van eenmalig tot langdurig</h2>
+        <p>Wij werken met klanten in elke fase — van een enkelvoudige reiniging tot een volledig jaarlijks onderhoudsprogramma.</p>
       </div>
       <div class="packages__grid">
-        <div class="package-card">
-          <div class="package-card__top">
-            <div class="package-card__label">One-Time</div>
-            <div class="package-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-          </div>
-          <h3>Single Project</h3>
-          <p>Need a one-off clean or treatment? We handle single jobs with the same professionalism as long-term clients.</p>
+        <div class="pkg-card">
+          <div class="pkg-card__label">Eenmalig</div>
+          <h3>Enkel Project</h3>
+          <p>Een eenmalige reiniging of behandeling nodig? Wij behandelen enkelvoudige opdrachten met dezelfde professionaliteit als langetermijnklanten.</p>
           <ul>
-            <li>Free on-site assessment</li>
-            <li>Fixed-price proposal</li>
-            <li>Scheduled at your convenience</li>
-            <li>Documented completion report</li>
+            <li>Gratis plaatsbezoek</li>
+            <li>Vaste offerteprijs</li>
+            <li>Ingepland op uw gemak</li>
+            <li>Rapport na voltooiing</li>
           </ul>
+          <a href="#contact" class="btn btn--ghost">Offerte Aanvragen</a>
         </div>
-        <div class="package-card package-card--featured">
-          <div class="package-card__top">
-            <div class="package-card__label">Most Popular</div>
-            <div class="package-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-          </div>
-          <h3>Maintenance Contract</h3>
-          <p>The smart choice for homeowners, businesses and property managers who want consistent, reliable property care year-round.</p>
+        <div class="pkg-card pkg-card--featured">
+          <div class="pkg-card__badge">Meest Populair</div>
+          <div class="pkg-card__label">Terugkerend</div>
+          <h3>Onderhoudspakket</h3>
+          <p>De slimme keuze voor woningeigenaars, bedrijven en vastgoedbeheerders die het hele jaar door betrouwbare vastgoedzorg willen.</p>
           <ul>
-            <li>Scheduled recurring visits</li>
-            <li>Priority service &amp; response</li>
-            <li>Annual property report</li>
-            <li>Discounted rates on extras</li>
-            <li>One dedicated point of contact</li>
+            <li>Geplande terugkerende bezoeken</li>
+            <li>Prioriteitsservice &amp; -reactie</li>
+            <li>Jaarlijks vastgoedrapport</li>
+            <li>Kortingen op extra diensten</li>
+            <li>Één dedicated aanspreekpunt</li>
           </ul>
+          <a href="#contact" class="btn btn--primary">Pakket Aanvragen</a>
         </div>
-        <div class="package-card">
-          <div class="package-card__top">
-            <div class="package-card__label">Enterprise</div>
-            <div class="package-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-            </div>
-          </div>
-          <h3>Portfolio Partnership</h3>
-          <p>For syndics, property managers and investors with multiple sites. We manage your entire portfolio under one contract.</p>
+        <div class="pkg-card">
+          <div class="pkg-card__label">Enterprise</div>
+          <h3>Portfolio Partnerschap</h3>
+          <p>Voor syndici, vastgoedbeheerders en investeerders met meerdere panden. Wij beheren uw volledige portfolio onder één contract.</p>
           <ul>
-            <li>Multi-site management</li>
-            <li>Custom service schedule</li>
-            <li>Dedicated account manager</li>
-            <li>Full reporting &amp; documentation</li>
-            <li>Scalable as your portfolio grows</li>
+            <li>Multi-site beheer</li>
+            <li>Aangepast serviceschema</li>
+            <li>Dedicated accountmanager</li>
+            <li>Volledige rapportage</li>
+            <li>Schaalbaar met uw portfolio</li>
           </ul>
+          <a href="#contact" class="btn btn--ghost">Contact Opnemen</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VISION STRIP -->
-  <section class="vision-strip">
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
     <div class="container">
-      <div class="vision-strip__inner">
-        <div class="vision-strip__text">
-          <div class="section-tag section-tag--light">Long-Term Vision</div>
-          <h2>Building Belgium's leading property care company</h2>
-          <p>
-            X-GROUP starts where the need is greatest — exterior cleaning and property maintenance. Over time, we expand into recurring maintenance contracts, commercial accounts, industrial sites, and eventually technology-assisted property inspections. The goal is simple: become the most trusted property care partner in Belgium.
-          </p>
-        </div>
-        <div class="vision-strip__pillars">
-          <div class="pillar">
-            <div class="pillar__phase">Phase 1</div>
-            <div class="pillar__title">Exterior Cleaning</div>
-            <div class="pillar__desc">High-demand residential and commercial cleaning services</div>
-          </div>
-          <div class="pillar__arrow">→</div>
-          <div class="pillar">
-            <div class="pillar__phase">Phase 2</div>
-            <div class="pillar__title">Maintenance Contracts</div>
-            <div class="pillar__desc">Recurring revenue through scheduled property care programs</div>
-          </div>
-          <div class="pillar__arrow">→</div>
-          <div class="pillar">
-            <div class="pillar__phase">Phase 3</div>
-            <div class="pillar__title">Full Property Care</div>
-            <div class="pillar__desc">Industrial, portfolio management, protection and improvement at scale</div>
+      <div class="section-header">
+        <div class="section-tag">Klantentestimonials</div>
+        <h2>Wat onze klanten zeggen</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"X-GROUP heeft onze volledige oprit en gevel gereinigd. Het resultaat was indrukwekkend — als nieuw. Snel, proper en correct geprijsd."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JD</div>
+            <div>
+              <strong>Jan De Smedt</strong>
+              <span>Woningeigenaar, Antwerpen</span>
+            </div>
           </div>
         </div>
+        <div class="testi-card testi-card--featured">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Als syndicus beheer ik 12 appartementsgebouwen. X-GROUP is nu onze vaste partner voor alle buitenreinigingen. Professioneel, betrouwbaar en één aanspreekpunt."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SV</div>
+            <div>
+              <strong>Sophie Vermeersch</strong>
+              <span>Syndicus, Brussel</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Ons magazijn van 8.000m² was toe aan een grondige reiniging. X-GROUP heeft het efficiënt aangepakt met het juiste materiaal. Aanrader voor industriële sites."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MK</div>
+            <div>
+              <strong>Mark Kowalski</strong>
+              <span>Logistiek Manager, Gent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div class="cta-band__text">
+        <h2>Klaar om uw eigendom te laten stralen?</h2>
+        <p>Vraag vandaag nog een gratis plaatsbezoek en offerte aan — zonder verplichtingen.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a href="tel:+32" class="btn btn--outline-white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1.27h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.7a16 16 0 006.29 6.29l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+          Bel ons
+        </a>
+        <a href="#contact" class="btn btn--primary">Offerte Aanvragen &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="contact__layout">
-        <div class="contact__left">
-          <div class="section-tag">Contact</div>
-          <h2 class="section-title">Let's talk about your property</h2>
-          <p>Tell us what you need. We'll come back to you within 24 hours with a tailored proposal — no obligation, no generic pricing.</p>
-          <div class="contact__info">
-            <div class="contact__info-item">
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__left">
+        <div class="section-tag">Contact</div>
+        <h2>Laten we praten over uw eigendom</h2>
+        <p>Vertel ons wat u nodig heeft. Wij komen binnen 24 uur terug met een op maat gemaakt voorstel — zonder verplichtingen.</p>
+        <div class="contact__items">
+          <div class="contact__item">
+            <div class="contact__item-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Belgium — All regions</span>
             </div>
-            <div class="contact__info-item">
+            <div>
+              <strong>Werkgebied</strong>
+              <span>België — Alle regio's</span>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__item-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1.27h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.7a16 16 0 006.29 6.29l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
-              <span>+32 (0) — Available on request</span>
             </div>
-            <div class="contact__info-item">
+            <div>
+              <strong>Telefoon</strong>
+              <span>+32 (0) — Op aanvraag beschikbaar</span>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__item-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>E-mail</strong>
               <span>info@x-group.be</span>
             </div>
           </div>
         </div>
-        <div class="contact__right">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Jan" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="De Smedt" required />
-              </div>
+      </div>
+      <div class="contact__right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Voornaam</label>
+              <input type="text" placeholder="Jan" required />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="jan@bedrijf.be" required />
+              <label>Naam</label>
+              <input type="text" placeholder="De Smedt" required />
             </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="+32 4xx xx xx xx" />
-            </div>
-            <div class="form-group">
-              <label for="market">Type of Property</label>
-              <select id="market" name="market" required>
-                <option value="" disabled selected>Select your property type</option>
-                <option value="residential">Residential — Home or Villa</option>
-                <option value="commercial">Commercial — Office, Shop or Restaurant</option>
-                <option value="industrial">Industrial — Warehouse or Factory</option>
-                <option value="management">Property Management — Portfolio</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell us about your property</label>
-              <textarea id="message" name="message" rows="4" placeholder="What do you need? What type of property, location, scope..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">
-              <span>Send Request</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-            <div class="form__success" id="formSuccess">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Thank you! We'll contact you within 24 hours.</span>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="jan@bedrijf.be" required />
+          </div>
+          <div class="form-group">
+            <label>Telefoon</label>
+            <input type="tel" placeholder="+32 4xx xx xx xx" />
+          </div>
+          <div class="form-group">
+            <label>Type vastgoed</label>
+            <select required>
+              <option value="" disabled selected>Selecteer uw type</option>
+              <option>Residentieel — Woning of Villa</option>
+              <option>Commercieel — Kantoor, Winkel of Horeca</option>
+              <option>Industrieel — Magazijn of Fabriek</option>
+              <option>Vastgoedbeheer — Portfolio</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Uw bericht</label>
+            <textarea rows="4" placeholder="Wat heeft u nodig? Type eigendom, locatie, omvang..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span>Verzenden</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <div class="form__success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Bedankt! We nemen binnen 24 uur contact met u op.</span>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="container footer__top">
       <div class="footer__brand">
         <a href="#" class="nav__logo">
-          <span class="logo-x">X</span><span class="logo-group">-GROUP</span>
+          <span class="logo-x">X</span><span class="logo-dash">-</span><span class="logo-group">GROUP</span>
         </a>
-        <p>One partner. Every property.<br />Professional property care across Belgium.</p>
+        <p>One partner. Every property.<br />Professionele vastgoedzorg in heel België.</p>
       </div>
-      <div class="footer__links">
+      <div class="footer__nav">
         <div class="footer__col">
-          <h5>Services</h5>
-          <a href="#residential">Residential</a>
-          <a href="#commercial">Commercial</a>
-          <a href="#industrial">Industrial</a>
-          <a href="#maintenance">Property Maintenance</a>
+          <h5>Diensten</h5>
+          <a href="#residential">Residentieel</a>
+          <a href="#commercial">Commercieel</a>
+          <a href="#industrial">Industrieel</a>
+          <a href="#maintenance">Vastgoedbeheer</a>
         </div>
         <div class="footer__col">
-          <h5>Company</h5>
-          <a href="#markets">Markets</a>
-          <a href="#approach">Our Approach</a>
+          <h5>Bedrijf</h5>
+          <a href="#why">Waarom X-GROUP</a>
+          <a href="#packages">Pakketten</a>
           <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <a href="mailto:info@x-group.be">info@x-group.be</a>
+          <a href="tel:+32">+32 (0) —</a>
+          <a href="#contact">Offerte Aanvragen</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">
-        <span>&copy; 2024 X-GROUP. All rights reserved. — Belgium</span>
+      <div class="container footer__bottom-inner">
+        <span>&copy; 2024 X-GROUP Belgium. Alle rechten voorbehouden.</span>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">General Terms</a>
+          <a href="#">Privacybeleid</a>
+          <a href="#">Algemene Voorwaarden</a>
         </div>
       </div>
     </div>
