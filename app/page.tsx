@@ -8,6 +8,7 @@ import {
   CheckCircle2, ChevronDown, Menu, X,
   Shield, Clock, Users, Star, TrendingUp,
   BarChart3, AlertTriangle, ThumbsUp,
+  Droplet, Wrench,
 } from "lucide-react";
 
 /* ─── inView hook ─── */
@@ -39,7 +40,56 @@ function Reveal({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
+/* ─── LOGO ─── */
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <span className={`relative inline-flex items-center justify-center ${className}`}>
+      <svg
+        viewBox="0 0 220 100"
+        className="absolute inset-0 w-full h-full"
+        style={{ overflow: "visible" }}
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="xgroup-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ffe08a" />
+            <stop offset="45%" stopColor="#f7b733" />
+            <stop offset="100%" stopColor="#e8920f" />
+          </linearGradient>
+        </defs>
+        <ellipse
+          cx="110" cy="50" rx="106" ry="30"
+          fill="none" stroke="url(#xgroup-ring)" strokeWidth="7"
+          transform="rotate(-9 110 50)"
+        />
+      </svg>
+      <span className="relative z-10 font-black tracking-[-0.03em] text-white uppercase">X-GROUP</span>
+    </span>
+  );
+}
+
 /* ─── DATA ─── */
+const pillars = [
+  {
+    key: "CLEAN", label: "Reinigen", icon: Droplet, color: "emerald",
+    title: "Professionele industriële reiniging",
+    desc: "Wij verwijderen vuil, aanslag en opbouw om het uiterlijk en de veiligheid van uw eigendommen te herstellen.",
+    img: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=700&q=80",
+  },
+  {
+    key: "PROTECT", label: "Beschermen", icon: Shield, color: "amber",
+    title: "Coatings & preventieve bescherming",
+    desc: "Wij herstellen en beschermen uw eigendommen met hoogwaardige coatings en on-site sproeioplossingen.",
+    img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80",
+  },
+  {
+    key: "MAINTAIN", label: "Onderhouden", icon: Wrench, color: "sky",
+    title: "Gepland site-onderhoud",
+    desc: "Wij houden uw sites en eigendommen in optimale staat met inspecties, preventief onderhoud en ondersteuning.",
+    img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80",
+  },
+];
+
 const services = [
   {
     icon: Home, label: "Residentieel", id: "residential",
@@ -131,14 +181,14 @@ function Nav() {
   const links = [["#services","Diensten"],["#why","Waarom X-GROUP"],["#process","Werkwijze"],["#pricing","Pakketten"]];
   return (
     <>
-      <div className="bg-sky-500 py-2.5 text-center text-xs font-medium text-white/90 px-4 relative z-50">
+      <div className="bg-amber-400 py-2.5 text-center text-xs font-semibold text-black px-4 relative z-50">
         ✦ Nieuw: Jaarlijkse onderhoudspakketten — prioriteitstoegang &amp; premium vastgoedzorg.{" "}
         <a href="#pricing" className="font-bold underline hover:no-underline">Meer info →</a>
       </div>
-      <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "bg-[#07080d]/90 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_0_rgba(255,255,255,0.04)]" : "bg-transparent"}`}>
+      <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "bg-[#07080d]/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_0_rgba(255,255,255,0.04)]" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
-          <a href="#" className="text-xl font-black tracking-[-0.04em] flex-shrink-0">
-            <span className="text-sky-500">X</span><span className="text-white">-GROUP</span>
+          <a href="#" className="flex-shrink-0">
+            <Logo className="w-[130px] h-[52px]" />
           </a>
           <nav className="hidden md:flex items-center gap-0.5 flex-1 justify-center">
             {links.map(([href, label]) => (
@@ -172,78 +222,50 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: "100svh" }}>
-      <div className="absolute inset-0 bg-[#07080d]" />
-      <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 80% 60% at 65% 40%, rgba(14,165,233,0.08) 0%, transparent 65%)"}} />
-      <div className="absolute inset-0 opacity-[0.02]" style={{backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",backgroundSize:"64px 64px"}} />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1800&q=80"
+        alt="Industriële reiniging en onderhoud"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ filter: "brightness(0.55) saturate(0.9)" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/40" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center" style={{ minHeight: "calc(100svh - 76px)", paddingTop: "3rem", paddingBottom: "5rem" }}>
-        <div className="grid lg:grid-cols-2 gap-14 xl:gap-24 items-center">
-          {/* Text */}
-          <div>
-            <div className="animate-fade-up inline-flex items-center gap-2.5 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 border border-sky-500/20 bg-sky-500/[0.07] rounded-full px-4 py-2 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse-dot" />
-              Beschikbaar in heel België
-            </div>
-            <h1 className="animate-fade-up delay-100 font-black leading-[1.0] tracking-[-0.045em] text-white mb-6" style={{ fontSize: "clamp(2.8rem, 6vw, 5.2rem)" }}>
-              The Property<br />
-              <span className="gradient-text-blue">Care Solution.</span>
-            </h1>
-            <p className="animate-fade-up delay-200 text-[1.05rem] leading-relaxed text-white/50 mb-9 max-w-[460px]">
-              Professionele reiniging, onderhoud, bescherming en verbetering voor{" "}
-              <span className="text-white/75 font-semibold">residentieel, commercieel en industrieel</span>{" "}
-              vastgoed in België.
-            </p>
-            <div className="animate-fade-up delay-300 flex flex-wrap gap-3 mb-10">
-              <Button asChild size="xl">
-                <a href="#contact">Gratis Offerte Aanvragen <ArrowRight className="w-4 h-4" /></a>
-              </Button>
-              <Button asChild variant="outline" size="xl">
-                <a href="tel:+32"><Phone className="w-4 h-4" /> Bel ons</a>
-              </Button>
-            </div>
-            <div className="animate-fade-up delay-400 flex flex-wrap gap-x-7 gap-y-2.5">
-              {["Gecertificeerd & verzekerd", "Reactie binnen 24u", "Vaste transparante prijs"].map(t => (
-                <span key={t} className="flex items-center gap-2 text-[0.8rem] text-white/40">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-500/60 flex-shrink-0" />{t}
-                </span>
-              ))}
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col justify-center" style={{ minHeight: "calc(100svh - 76px)", paddingTop: "6rem", paddingBottom: "5rem" }}>
+        <div className="max-w-2xl">
+          <div className="animate-fade-up inline-flex items-center gap-2.5 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 border border-amber-500/25 bg-amber-500/[0.08] rounded-full px-4 py-2 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-dot" />
+            Beschikbaar in heel België
           </div>
-
-          {/* Image card */}
-          <div className="animate-fade-up delay-200 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-white/[0.07]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
-                alt="Professional property cleaning"
-                className="w-full object-cover object-center"
-                style={{ aspectRatio: "4/3", filter: "brightness(0.72) saturate(0.9)" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07080d] via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 flex items-center gap-3 bg-[#07080d]/85 backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3">
-                <div className="w-8 h-8 rounded-full bg-sky-500/15 border border-sky-500/20 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-4 h-4 text-sky-400" />
-                </div>
-                <div>
-                  <p className="text-[0.78rem] font-bold text-white leading-tight">100% Professioneel</p>
-                  <p className="text-[0.7rem] text-white/40">Gecertificeerd &amp; volledig verzekerd</p>
-                </div>
-              </div>
-              <div className="absolute top-4 right-4 flex flex-col gap-2">
-                {[{n:"4",l:"Markten"},{n:"20+",l:"Diensten"}].map(s => (
-                  <div key={s.l} className="bg-[#07080d]/82 backdrop-blur-xl border border-white/10 rounded-lg px-3 py-2 text-right">
-                    <p className="text-lg font-black text-white leading-none">{s.n}</p>
-                    <p className="text-[0.62rem] uppercase tracking-widest text-white/40 mt-0.5">{s.l}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <h1 className="animate-fade-up delay-100 font-black leading-[0.98] tracking-[-0.03em] text-white uppercase mb-6" style={{ fontSize: "clamp(2.6rem, 6.5vw, 5rem)" }}>
+            Reinig.<br />
+            Bescherm.<br />
+            <span className="text-amber-400">Onderhoud.</span>
+          </h1>
+          <p className="animate-fade-up delay-200 text-[1.05rem] leading-relaxed text-white/65 mb-9 max-w-[460px]">
+            Industriële en professionele diensten die uw eigendom in topvorm houden — voor residentieel, commercieel en industrieel vastgoed in heel België.
+          </p>
+          <div className="animate-fade-up delay-300 flex flex-wrap gap-3 mb-10">
+            <Button asChild size="xl">
+              <a href="#services">Ontdek Onze Diensten <ArrowRight className="w-4 h-4" /></a>
+            </Button>
+            <Button asChild variant="outline" size="xl">
+              <a href="tel:+32"><Phone className="w-4 h-4" /> Bel ons</a>
+            </Button>
+          </div>
+          <div className="animate-fade-up delay-400 flex flex-wrap gap-x-7 gap-y-2.5">
+            <span className="flex items-center gap-2 text-[0.85rem] text-white/55">
+              <Shield className="w-4 h-4 text-amber-400/80 flex-shrink-0" />Vertrouwd door professionals
+            </span>
+            <span className="flex items-center gap-2 text-[0.85rem] text-white/55">
+              <Users className="w-4 h-4 text-amber-400/80 flex-shrink-0" />200+ bedrijven geholpen
+            </span>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/20 text-[0.6rem] tracking-[0.2em] uppercase z-10">
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30 text-[0.6rem] tracking-[0.2em] uppercase z-10">
         <span>Scroll</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />
       </div>
@@ -258,11 +280,59 @@ function MarqueeStrip() {
       <div className="flex animate-marquee whitespace-nowrap">
         {[...marqueeItems, ...marqueeItems].map((n, i) => (
           <span key={i} className="inline-flex items-center gap-3 px-8 text-[0.65rem] font-bold tracking-[0.22em] text-white/18 uppercase">
-            <span className="w-1 h-1 rounded-full bg-sky-500/25" />{n}
+            <span className="w-1 h-1 rounded-full bg-amber-500/25" />{n}
           </span>
         ))}
       </div>
     </div>
+  );
+}
+
+/* ─── PILLARS ─── */
+const pillarColorMap: Record<string, { badge: string; icon: string; link: string }> = {
+  emerald: { badge: "bg-emerald-500", icon: "text-white", link: "text-emerald-600 hover:text-emerald-700" },
+  amber: { badge: "bg-amber-500", icon: "text-white", link: "text-amber-600 hover:text-amber-700" },
+  sky: { badge: "bg-sky-500", icon: "text-white", link: "text-sky-600 hover:text-sky-700" },
+};
+
+function PillarsSection() {
+  return (
+    <section id="services" className="py-28 px-6 bg-[#f6f6f4]">
+      <div className="max-w-7xl mx-auto">
+        <Reveal>
+          <div className="text-center mb-14">
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-600 mb-4">Onze Diensten</span>
+            <h2 className="font-black tracking-[-0.035em] text-[#0f1115] leading-tight" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
+              Drie pijlers. Volledige zorg.
+            </h2>
+          </div>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-6">
+          {pillars.map((p, i) => {
+            const c = pillarColorMap[p.color];
+            return (
+              <Reveal key={p.key} delay={i * 90}>
+                <div className="h-full card-hover-light rounded-2xl bg-white border border-black/[0.06] shadow-sm overflow-hidden flex flex-col">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.img} alt={p.title} className="w-full h-44 object-cover" />
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className={`w-10 h-10 rounded-lg ${c.badge} flex items-center justify-center mb-4 flex-shrink-0`}>
+                      <p.icon className={`w-5 h-5 ${c.icon}`} />
+                    </div>
+                    <span className="text-[0.68rem] font-bold tracking-widest uppercase text-black/35 mb-1.5">{p.label}</span>
+                    <h3 className="text-[1.02rem] font-bold text-[#0f1115] mb-2.5 leading-snug">{p.title}</h3>
+                    <p className="text-[0.85rem] text-black/50 leading-relaxed flex-1">{p.desc}</p>
+                    <a href="#contact" className={`text-[0.8rem] font-semibold mt-5 inline-flex items-center gap-1 transition-colors ${c.link}`}>
+                      Meer info <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -276,7 +346,7 @@ function ProblemSection() {
             <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-4">Herkent u dit?</span>
             <h2 className="font-black tracking-[-0.035em] text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Vastgoedbeheer is{" "}
-              <span className="gradient-text-blue">ingewikkeld genoeg.</span>
+              <span className="gradient-text-amber">ingewikkeld genoeg.</span>
             </h2>
             <p className="text-white/45 text-[1.05rem] max-w-lg mx-auto leading-relaxed">
               De meeste eigenaars en beheerders verloren al tijd, geld en energie aan dezelfde frustraties.
@@ -294,13 +364,13 @@ function ProblemSection() {
           </div>
         </Reveal>
         <Reveal delay={200}>
-          <div className="rounded-2xl border border-sky-500/20 bg-sky-500/[0.06] p-7 md:p-9">
+          <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.06] p-7 md:p-9">
             <div className="flex items-start gap-5">
-              <div className="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/20 flex items-center justify-center flex-shrink-0">
-                <ThumbsUp className="w-5 h-5 text-sky-400" />
+              <div className="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
+                <ThumbsUp className="w-5 h-5 text-amber-400" />
               </div>
               <div>
-                <p className="text-[0.7rem] font-bold tracking-widest uppercase text-sky-400 mb-2">De X-GROUP oplossing</p>
+                <p className="text-[0.7rem] font-bold tracking-widest uppercase text-amber-400 mb-2">De X-GROUP oplossing</p>
                 <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">Eén partner. Volledig ontzorgd.</h3>
                 <p className="text-white/55 leading-relaxed max-w-2xl text-[0.92rem]">
                   X-GROUP neemt de volledige coördinatie over. Van reiniging tot schilderwerk, van dakgoten tot industriële sanering. U heeft één aanspreekpunt, één factuur en één plan — voor elk eigendom in uw portfolio.
@@ -314,21 +384,28 @@ function ProblemSection() {
   );
 }
 
-/* ─── SERVICES ─── */
+/* ─── SECTORS ─── */
 const accentMap: Record<string, string> = {
   sky: "border-sky-500/20 from-sky-500/[0.08]",
   violet: "border-violet-500/20 from-violet-500/[0.08]",
   amber: "border-amber-500/20 from-amber-500/[0.08]",
   emerald: "border-emerald-500/20 from-emerald-500/[0.08]",
 };
+const accentDotMap: Record<string, string> = {
+  sky: "bg-sky-500/60", violet: "bg-violet-500/60", amber: "bg-amber-500/60", emerald: "bg-emerald-500/60",
+};
+const accentLinkMap: Record<string, string> = {
+  sky: "text-sky-400 hover:text-sky-300", violet: "text-violet-400 hover:text-violet-300",
+  amber: "text-amber-400 hover:text-amber-300", emerald: "text-emerald-400 hover:text-emerald-300",
+};
 
 function ServicesSection() {
   return (
-    <section id="services" className="py-28 px-6 border-t border-white/[0.05] bg-[#0a0b12]">
+    <section id="sectors" className="py-28 px-6 border-t border-white/[0.05] bg-[#0a0b12]">
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-4">Wat We Doen</span>
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-4">Voor Elke Sector</span>
             <h2 className="font-black tracking-[-0.035em] text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Volledig vastgoedonderhoud<br />
               <span className="gradient-text">voor elke sector</span>
@@ -350,11 +427,11 @@ function ServicesSection() {
                 <ul className="flex-1 space-y-2 mb-6">
                   {s.items.map(item => (
                     <li key={item} className="flex items-start gap-2 text-[0.78rem] text-white/45">
-                      <span className="w-1 h-1 rounded-full bg-sky-500/50 mt-1.5 flex-shrink-0" />{item}
+                      <span className={`w-1 h-1 rounded-full ${accentDotMap[s.accent]} mt-1.5 flex-shrink-0`} />{item}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="text-[0.78rem] font-semibold text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-1">
+                <a href="#contact" className={`text-[0.78rem] font-semibold transition-colors flex items-center gap-1 ${accentLinkMap[s.accent]}`}>
                   Meer info <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
@@ -390,10 +467,10 @@ function WhySection() {
         <div className="grid lg:grid-cols-2 gap-14 xl:gap-24 items-start">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-5">Waarom X-GROUP</span>
+              <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-5">Waarom X-GROUP</span>
               <h2 className="font-black tracking-[-0.04em] text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
                 Niet zomaar een<br />
-                <span className="gradient-text-blue">reinigingsbedrijf.</span>
+                <span className="gradient-text-amber">reinigingsbedrijf.</span>
               </h2>
               <p className="text-white/50 text-[1.05rem] leading-relaxed mb-8">
                 X-GROUP is gebouwd als een professionele property services organisatie — gestructureerd, betrouwbaar en ontworpen om te schalen. Van een eengezinswoning tot een industrieel complex.
@@ -403,10 +480,10 @@ function WhySection() {
               </Button>
               <div className="mt-8 rounded-xl border border-white/[0.06] bg-white/[0.02] p-6">
                 <p className="text-[0.84rem] text-white/38 italic leading-relaxed mb-4">
-                  "X-GROUP start waar de nood het grootst is — buitenreiniging en preventief onderhoud. Het doel is duidelijk: uitgroeien tot de meest betrouwbare vastgoedzorgpartner in België."
+                  &ldquo;X-GROUP start waar de nood het grootst is — buitenreiniging en preventief onderhoud. Het doel is duidelijk: uitgroeien tot de meest betrouwbare vastgoedzorgpartner in België.&rdquo;
                 </p>
                 <p className="text-sm font-bold text-white">X-GROUP Belgium</p>
-                <p className="text-[0.68rem] uppercase tracking-widest text-sky-400 font-semibold mt-0.5">Professionele Property Care</p>
+                <p className="text-[0.68rem] uppercase tracking-widest text-amber-400 font-semibold mt-0.5">Professionele Property Care</p>
               </div>
             </div>
           </Reveal>
@@ -414,8 +491,8 @@ function WhySection() {
             {whyItems.map((item, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="card-hover h-full rounded-xl border border-white/[0.07] bg-white/[0.02] p-5">
-                  <div className="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/15 flex items-center justify-center mb-4">
-                    <item.icon className="w-4 h-4 text-sky-400" />
+                  <div className="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-4">
+                    <item.icon className="w-4 h-4 text-amber-400" />
                   </div>
                   <h4 className="text-[0.9rem] font-bold text-white mb-2 leading-snug">{item.title}</h4>
                   <p className="text-[0.78rem] text-white/42 leading-relaxed">{item.desc}</p>
@@ -436,7 +513,7 @@ function ProcessSection() {
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-4">Werkwijze</span>
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-4">Werkwijze</span>
             <h2 className="font-black tracking-[-0.035em] text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Van eerste contact<br />
               <span className="gradient-text">tot langdurig partnerschap</span>
@@ -447,12 +524,12 @@ function ProcessSection() {
           </div>
         </Reveal>
         <div className="grid md:grid-cols-4 gap-6 relative">
-          <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-sky-500/15 to-transparent" />
+          <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-amber-500/15 to-transparent" />
           {steps.map((s, i) => (
             <Reveal key={i} delay={i * 100}>
               <div className="text-center group">
-                <div className="w-20 h-20 rounded-2xl border border-sky-500/20 bg-sky-500/[0.07] flex items-center justify-center mx-auto mb-6 group-hover:border-sky-500/40 group-hover:bg-sky-500/[0.12] transition-all duration-300">
-                  <span className="text-2xl font-black text-sky-400/75 tracking-tighter">{s.n}</span>
+                <div className="w-20 h-20 rounded-2xl border border-amber-500/20 bg-amber-500/[0.07] flex items-center justify-center mx-auto mb-6 group-hover:border-amber-500/40 group-hover:bg-amber-500/[0.12] transition-all duration-300">
+                  <span className="text-2xl font-black text-amber-400/75 tracking-tighter">{s.n}</span>
                 </div>
                 <h4 className="text-[0.95rem] font-bold text-white mb-3">{s.title}</h4>
                 <p className="text-[0.8rem] text-white/42 leading-relaxed">{s.desc}</p>
@@ -472,7 +549,7 @@ function PricingSection() {
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-4">Pakketten</span>
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-4">Pakketten</span>
             <h2 className="font-black tracking-[-0.035em] text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Van eenmalig<br />
               <span className="gradient-text">tot langdurig</span>
@@ -487,22 +564,22 @@ function PricingSection() {
             <Reveal key={i} delay={i * 80}>
               <div className={`relative rounded-2xl p-7 flex flex-col card-hover ${
                 pkg.featured
-                  ? "border border-sky-500 bg-gradient-to-b from-sky-500/[0.09] to-sky-500/[0.03] shadow-[0_0_0_1px_rgba(14,165,233,0.15),0_16px_48px_rgba(14,165,233,0.1)]"
+                  ? "border border-amber-500 bg-gradient-to-b from-amber-500/[0.09] to-amber-500/[0.03] shadow-[0_0_0_1px_rgba(245,158,11,0.15),0_16px_48px_rgba(245,158,11,0.1)]"
                   : "border border-white/[0.07] bg-white/[0.02]"
               }`}>
                 {pkg.badge && (
                   <div className={`absolute -top-px left-1/2 -translate-x-1/2 text-[0.62rem] font-bold uppercase tracking-widest px-4 py-1 rounded-b-lg ${
-                    pkg.badge === "Meest Populair" ? "bg-sky-500 text-white" : "bg-white/8 text-white/55"
+                    pkg.badge === "Meest Populair" ? "bg-amber-400 text-black" : "bg-white/8 text-white/55"
                   }`}>
                     {pkg.badge}
                   </div>
                 )}
-                <span className="text-[0.65rem] font-bold tracking-widest uppercase text-sky-400 mb-2">{pkg.name}</span>
+                <span className="text-[0.65rem] font-bold tracking-widest uppercase text-amber-400 mb-2">{pkg.name}</span>
                 <p className="text-[0.85rem] text-white/45 leading-relaxed mb-5 flex-grow">{pkg.desc}</p>
                 <ul className="space-y-3 mb-7">
                   {pkg.items.map((item, j) => (
                     <li key={j} className="flex items-center gap-2.5 text-[0.82rem] text-white/55">
-                      <CheckCircle2 className="w-4 h-4 text-sky-500/65 flex-shrink-0" />{item}
+                      <CheckCircle2 className="w-4 h-4 text-amber-500/65 flex-shrink-0" />{item}
                     </li>
                   ))}
                 </ul>
@@ -530,7 +607,7 @@ function TestimonialsSection() {
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="text-center mb-14">
-            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-4">Klantenervaringen</span>
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-4">Klantenervaringen</span>
             <h2 className="font-black tracking-[-0.035em] text-white leading-tight" style={{ fontSize: "clamp(2rem,4vw,2.8rem)" }}>
               Wat onze klanten zeggen
             </h2>
@@ -539,13 +616,13 @@ function TestimonialsSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <Reveal key={i} delay={i * 80}>
-              <div className={`card-hover rounded-2xl border p-7 h-full flex flex-col ${i === 1 ? "border-sky-500/20 bg-sky-500/[0.04]" : "border-white/[0.07] bg-white/[0.02]"}`}>
+              <div className={`card-hover rounded-2xl border p-7 h-full flex flex-col ${i === 1 ? "border-amber-500/20 bg-amber-500/[0.04]" : "border-white/[0.07] bg-white/[0.02]"}`}>
                 <div className="flex gap-0.5 mb-5">
-                  {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-sky-400 text-sky-400" />)}
+                  {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
                 <p className="text-[0.88rem] text-white/52 leading-relaxed italic flex-grow mb-6">&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-sky-500/10 border border-sky-500/18 flex items-center justify-center text-[0.68rem] font-bold text-sky-400 flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/18 flex items-center justify-center text-[0.68rem] font-bold text-amber-400 flex-shrink-0">
                     {t.initials}
                   </div>
                   <div>
@@ -565,21 +642,21 @@ function TestimonialsSection() {
 /* ─── CTA BAND ─── */
 function CtaBand() {
   return (
-    <div className="py-20 px-6 bg-gradient-to-r from-sky-600 to-sky-500">
+    <div className="py-20 px-6 bg-gradient-to-r from-amber-500 to-amber-400">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div>
-          <h2 className="text-[1.75rem] md:text-[2.1rem] font-black text-white tracking-tight leading-snug mb-2">
+          <h2 className="text-[1.75rem] md:text-[2.1rem] font-black text-black tracking-tight leading-snug mb-2">
             Klaar om uw eigendom te laten stralen?
           </h2>
-          <p className="text-white/70 text-[0.95rem]">
+          <p className="text-black/65 text-[0.95rem]">
             Gratis plaatsbezoek — vrijblijvend — binnen 24u reactie.
           </p>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
-          <Button variant="white" size="xl" asChild>
+          <Button size="xl" className="bg-black text-white hover:bg-neutral-800 border-0" asChild>
             <a href="tel:+32"><Phone className="w-4 h-4" /> Bel ons</a>
           </Button>
-          <Button size="xl" className="bg-[#07080d] hover:bg-[#0f1018] text-white border-0" asChild>
+          <Button size="xl" className="bg-white text-black hover:bg-neutral-100 border-0" asChild>
             <a href="#contact">Offerte Aanvragen <ArrowRight className="w-4 h-4" /></a>
           </Button>
         </div>
@@ -597,17 +674,17 @@ function ContactSection() {
     setLoading(true);
     setTimeout(() => { setLoading(false); setSent(true); }, 900);
   }
-  const inputCls = "w-full bg-[#07080d] border border-white/[0.07] rounded-lg px-3.5 py-2.5 text-[0.88rem] text-white placeholder-white/18 focus:outline-none focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/15 transition-all";
+  const inputCls = "w-full bg-[#07080d] border border-white/[0.07] rounded-lg px-3.5 py-2.5 text-[0.88rem] text-white placeholder-white/18 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/15 transition-all";
 
   return (
     <section id="contact" className="py-28 px-6 border-t border-white/[0.05] bg-[#0a0b12]">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-14 xl:gap-24 items-start">
           <Reveal>
-            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-sky-400 mb-5">Contact</span>
+            <span className="inline-block text-[0.7rem] font-bold tracking-[0.18em] uppercase text-amber-400 mb-5">Contact</span>
             <h2 className="font-black tracking-[-0.04em] text-white leading-tight mb-5" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Laten we praten<br />
-              <span className="gradient-text-blue">over uw eigendom.</span>
+              <span className="gradient-text-amber">over uw eigendom.</span>
             </h2>
             <p className="text-white/50 text-[1.05rem] leading-relaxed mb-9 max-w-md">
               Vertel ons wat u nodig heeft. We komen binnen 24 uur terug met een op maat gemaakt voorstel — zonder verplichtingen.
@@ -615,8 +692,8 @@ function ContactSection() {
             <div className="space-y-5 mb-8">
               {[{icon:MapPin,l:"Werkgebied",v:"België — alle regio's"},{icon:Phone,l:"Telefoon",v:"+32 (0) — op aanvraag"},{icon:Mail,l:"E-mail",v:"info@x-group.be"}].map(c => (
                 <div key={c.l} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-sky-500/[0.07] border border-sky-500/15 flex items-center justify-center flex-shrink-0">
-                    <c.icon className="w-4 h-4 text-sky-400" />
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/[0.07] border border-amber-500/15 flex items-center justify-center flex-shrink-0">
+                    <c.icon className="w-4 h-4 text-amber-400" />
                   </div>
                   <div>
                     <p className="text-[0.68rem] font-semibold uppercase tracking-wider text-white/30">{c.l}</p>
@@ -684,13 +761,13 @@ function Footer() {
     <footer className="border-t border-white/[0.05] bg-[#07080d] px-6 pt-14 pb-0">
       <div className="max-w-7xl mx-auto grid md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-10 pb-12">
         <div>
-          <a href="#" className="text-xl font-black tracking-[-0.04em] block mb-3">
-            <span className="text-sky-500">X</span><span className="text-white">-GROUP</span>
+          <a href="#" className="block mb-3">
+            <Logo className="w-[130px] h-[52px]" />
           </a>
           <p className="text-[0.82rem] text-white/28 leading-relaxed max-w-[200px]">One partner. Every property. Professionele vastgoedzorg in heel België.</p>
         </div>
         {[
-          {title:"Diensten", links:[["Residentieel","#residential"],["Commercieel","#commercial"],["Industrieel","#industrial"],["Vastgoedbeheer","#maintenance"]]},
+          {title:"Diensten", links:[["Reinigen","#services"],["Beschermen","#services"],["Onderhouden","#services"],["Alle sectoren","#sectors"]]},
           {title:"Bedrijf",  links:[["Waarom X-GROUP","#why"],["Werkwijze","#process"],["Pakketten","#pricing"],["Contact","#contact"]]},
           {title:"Contact",  links:[["info@x-group.be","#"],["Offerte Aanvragen","#contact"],["België — alle regio's","#"]]},
         ].map(col => (
@@ -723,6 +800,7 @@ export default function Page() {
       <Nav />
       <Hero />
       <MarqueeStrip />
+      <PillarsSection />
       <ProblemSection />
       <ServicesSection />
       <StatsBar />
